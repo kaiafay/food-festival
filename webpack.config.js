@@ -1,5 +1,6 @@
 // webpack will look for this exact filename so it cannot be named anything different
 
+const webpack = require("webpack");
 const path = require('path');
 
 // main configuration object that tells webpack what to do
@@ -11,6 +12,12 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'main.bundle.js'
     },
+    plugins: [
+        new webpack.ProvidePlugin({
+            $: "jquery",
+            jQuery: "jquery"
+        })
+    ],
     // specify the mode for webpack to run
     mode: 'development'
 };
