@@ -1,5 +1,6 @@
 // webpack will look for this exact filename so it cannot be named anything different
 
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require("webpack");
 const path = require('path');
 
@@ -16,6 +17,10 @@ module.exports = {
         new webpack.ProvidePlugin({
             $: "jquery",
             jQuery: "jquery"
+        }),
+        new BundleAnalyzerPlugin({
+            // the report outputs to an HTML file in the dist folder
+            analyzerMode: 'static'
         })
     ],
     // specify the mode for webpack to run
