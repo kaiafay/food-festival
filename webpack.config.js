@@ -3,6 +3,7 @@
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const webpack = require("webpack");
 const path = require('path');
+const WebpackPwaManifest = require("webpack-pwa-manifest");
 
 // main configuration object that tells webpack what to do
 module.exports = {
